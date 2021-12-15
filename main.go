@@ -1,9 +1,10 @@
 package main
 
 import (
-	/*
+	
 	"errors"
 	"fmt"
+	/*
 	"log"
 	*/
 	"time"
@@ -53,4 +54,12 @@ func main() {
 		fetcherOpts...,
 	)
 
+	networkList, fetchErr := f.NetworkListRetry(Context, nil)
+	if fetchErr != nil {
+		return fmt.Errorf("%w: unable to fetch network list", fetchErr.Err)
+	}
+
+	if len(networkList.NetworkIdentifiers) == 0 {
+		return errors.New("no networks available")
+	}
 }
