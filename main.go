@@ -8,7 +8,7 @@ import (
 	"log"
 	"time"
 	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	
+	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/fatih/color"
 	/*
 	"github.com/spf13/cobra"
@@ -82,7 +82,7 @@ func main() {
 		log.Printf("Network options: %s\n", types.PrettyPrintStruct(networkOptions))
 
 		networkStatus, fetchErr := f.NetworkStatusRetry(
-			Context,
+			ctx,
 			network,
 			nil,
 		)
