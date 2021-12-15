@@ -35,6 +35,9 @@ func main() {
 
 
 	MaxOnlineConnections					 := DefaultMaxOnlineConnections;
+	RetryElapsedTime                         := 5;
+	HTTPTimeout 							 := DefaultTimeout;
+	MaxRetries                               := DefaultMaxRetries;
 	fetcherOpts := []fetcher.Option{
 		fetcher.WithMaxConnections(MaxOnlineConnections),
 		fetcher.WithRetryElapsedTime(time.Duration(RetryElapsedTime) * time.Second),
