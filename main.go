@@ -8,7 +8,7 @@ import (
 	*/
 	"time"
 	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/types"
+	"github.com/keninqiu/rosetta-test/configurations/types"
 	/*
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
