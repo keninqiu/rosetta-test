@@ -16,7 +16,7 @@ import (
 
 func main() {
 	
-	//DefaultURL                               := "http://localhost:8080"
+	DefaultURL                               := "http://localhost:8080"
 	DefaultTimeout                           := 10
 	DefaultMaxRetries                        := 5
 	DefaultMaxOnlineConnections              := 120 // most OS have a default limit of 128
@@ -35,25 +35,22 @@ func main() {
 	DefaultMaxReorgDepth                     := 100
 	*/
 
-	MaxOnlineConnections					 := DefaultMaxOnlineConnections;
-	RetryElapsedTime                         := 5;
-	HTTPTimeout 							 := DefaultTimeout;
-	var MaxRetries uint64                    = uint64(DefaultMaxRetries);
+	MaxOnlineConnections					 := DefaultMaxOnlineConnections
+	RetryElapsedTime                         := 5
+	HTTPTimeout 							 := DefaultTimeout
+	var MaxRetries uint64                    =  uint64(DefaultMaxRetries)
+	OnlineURL								 := DefaultURL
 	fetcherOpts := []fetcher.Option{
 		fetcher.WithMaxConnections(MaxOnlineConnections),
 		fetcher.WithRetryElapsedTime(time.Duration(RetryElapsedTime) * time.Second),
 		fetcher.WithTimeout(time.Duration(HTTPTimeout) * time.Second),
 		fetcher.WithMaxRetries(MaxRetries),
 	}
-/*
-	if Config.ForceRetry {
-		fetcherOpts = append(fetcherOpts, fetcher.WithForceRetry())
-	}
+
 
 	f := fetcher.New(
-		Config.OnlineURL,
+		OnlineURL,
 		fetcherOpts...,
 	)
-	*/
 
 }
