@@ -6,13 +6,16 @@ import (
 	"log"
 	"time"
 
+	/*
 	"github.com/coinbase/rosetta-sdk-go/fetcher"
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
+	*/
 )
 
 func main() {
+	/*
 	fetcherOpts := []fetcher.Option{
 		fetcher.WithMaxConnections(Config.MaxOnlineConnections),
 		fetcher.WithRetryElapsedTime(time.Duration(Config.RetryElapsedTime) * time.Second),
@@ -23,10 +26,11 @@ func main() {
 	if Config.ForceRetry {
 		fetcherOpts = append(fetcherOpts, fetcher.WithForceRetry())
 	}
-	
+
 	f := fetcher.New(
 		Config.OnlineURL,
 		fetcherOpts...,
 	)
+	*/
 
 }
