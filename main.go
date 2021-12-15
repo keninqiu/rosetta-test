@@ -8,7 +8,6 @@ import (
 	*/
 	"time"
 	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/keninqiu/rosetta-test/configurations/types"
 	/*
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
@@ -17,11 +16,29 @@ import (
 
 func main() {
 	
+	DefaultURL                               = "http://localhost:8080"
+	DefaultTimeout                           = 10
+	DefaultMaxRetries                        = 5
+	DefaultMaxOnlineConnections              = 120 // most OS have a default limit of 128
+	DefaultMaxOfflineConnections             = 4   // we shouldn't need many connections for construction
+	DefaultMaxSyncConcurrency                = 64
+	DefaultActiveReconciliationConcurrency   = 16
+	DefaultInactiveReconciliationConcurrency = 4
+	DefaultInactiveReconciliationFrequency   = 250
+	DefaultConfirmationDepth                 = 10
+	DefaultStaleDepth                        = 30
+	DefaultBroadcastLimit                    = 3
+	DefaultTipDelay                          = 300
+	DefaultBlockBroadcastLimit               = 5
+	DefaultStatusPort                        = 9090
+	DefaultMaxReorgDepth                     = 100
+
+
 	fetcherOpts := []fetcher.Option{
-		fetcher.WithMaxConnections(Config.MaxOnlineConnections),
-		fetcher.WithRetryElapsedTime(time.Duration(Config.RetryElapsedTime) * time.Second),
-		fetcher.WithTimeout(time.Duration(Config.HTTPTimeout) * time.Second),
-		fetcher.WithMaxRetries(Config.MaxRetries),
+		fetcher.WithMaxConnections(MaxOnlineConnections),
+		fetcher.WithRetryElapsedTime(time.Duration(RetryElapsedTime) * time.Second),
+		fetcher.WithTimeout(time.Duration(HTTPTimeout) * time.Second),
+		fetcher.WithMaxRetries(MaxRetries),
 	}
 /*
 	if Config.ForceRetry {
