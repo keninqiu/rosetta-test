@@ -34,6 +34,7 @@ func main() {
 	DefaultMaxReorgDepth                     := 100
 
 
+	MaxOnlineConnections					 := DefaultMaxOnlineConnections;
 	fetcherOpts := []fetcher.Option{
 		fetcher.WithMaxConnections(MaxOnlineConnections),
 		fetcher.WithRetryElapsedTime(time.Duration(RetryElapsedTime) * time.Second),
