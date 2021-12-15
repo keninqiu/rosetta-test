@@ -5,14 +5,12 @@ import (
 	"errors"
 	"fmt"
 	"context"
-	/*
 	"log"
-	*/
 	"time"
 	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	/*
-	"github.com/fatih/color"
 	
+	"github.com/fatih/color"
+	/*
 	"github.com/spf13/cobra"
 	*/
 )
@@ -70,8 +68,9 @@ func main() {
 
 
 	for _, network := range networkList.NetworkIdentifiers {
+		color.Cyan(types.PrettyPrintStruct(network))
 		networkOptions, fetchErr := f.NetworkOptions(
-			Context,
+			ctx,
 			network,
 			nil,
 		)
