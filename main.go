@@ -12,6 +12,7 @@ import (
 	"github.com/coinbase/rosetta-sdk-go/fetcher"
 	/*
 	"github.com/fatih/color"
+	
 	"github.com/spf13/cobra"
 	*/
 )
@@ -65,5 +66,32 @@ func main() {
 	if len(networkList.NetworkIdentifiers) == 0 {
 		errors.New("no networks available")
 		return
+	}
+
+
+	for _, network := range networkList.NetworkIdentifiers {
+		networkOptions, fetchErr := f.NetworkOptions(
+			Context,
+			network,
+			nil,
+		)
+		if fetchErr != nil {
+			fmt.Errorf("%w: unable to get network options", fetchErr.Err)
+			return 
+		}
+
+		log.Printf("Network options: %s\n", types.PrettyPrintStruct(networkOptions))
+
+		networkStatus, fetchErr := f.NetworkStatusRetry(
+			Context,
+			network,
+			nil,
+		)
+		if fetchErr != nil {
+			fmt.Errorf("%w: unable to get network status", fetchErr.Err)
+			return 
+		}
+
+		log.Printf("Network status: %s\n", types.PrettyPrintStruct(networkStatus))
 	}
 }
