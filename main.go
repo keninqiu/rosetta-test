@@ -16,22 +16,22 @@ import (
 
 func main() {
 	
-	DefaultURL                               = "http://localhost:8080"
-	DefaultTimeout                           = 10
-	DefaultMaxRetries                        = 5
-	DefaultMaxOnlineConnections              = 120 // most OS have a default limit of 128
-	DefaultMaxOfflineConnections             = 4   // we shouldn't need many connections for construction
-	DefaultMaxSyncConcurrency                = 64
-	DefaultActiveReconciliationConcurrency   = 16
-	DefaultInactiveReconciliationConcurrency = 4
-	DefaultInactiveReconciliationFrequency   = 250
-	DefaultConfirmationDepth                 = 10
-	DefaultStaleDepth                        = 30
-	DefaultBroadcastLimit                    = 3
-	DefaultTipDelay                          = 300
-	DefaultBlockBroadcastLimit               = 5
-	DefaultStatusPort                        = 9090
-	DefaultMaxReorgDepth                     = 100
+	DefaultURL                               := "http://localhost:8080"
+	DefaultTimeout                           := 10
+	DefaultMaxRetries                        := 5
+	DefaultMaxOnlineConnections              := 120 // most OS have a default limit of 128
+	DefaultMaxOfflineConnections             := 4   // we shouldn't need many connections for construction
+	DefaultMaxSyncConcurrency                := 64
+	DefaultActiveReconciliationConcurrency   := 16
+	DefaultInactiveReconciliationConcurrency := 4
+	DefaultInactiveReconciliationFrequency   := 250
+	DefaultConfirmationDepth                 := 10
+	DefaultStaleDepth                        := 30
+	DefaultBroadcastLimit                    := 3
+	DefaultTipDelay                          := 300
+	DefaultBlockBroadcastLimit               := 5
+	DefaultStatusPort                        := 9090
+	DefaultMaxReorgDepth                     := 100
 
 
 	fetcherOpts := []fetcher.Option{
