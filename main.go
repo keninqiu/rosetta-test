@@ -55,7 +55,7 @@ func main() {
 		fetcherOpts...,
 	)
 
-	networkList, fetchErr := f.NetworkListRetry(Context, nil)
+	networkList, fetchErr := f.NetworkListRetry(context.Context, nil)
 	if fetchErr != nil {
 		fmt.Errorf("%w: unable to fetch network list", fetchErr.Err)
 		return 
