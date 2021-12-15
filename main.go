@@ -56,10 +56,12 @@ func main() {
 
 	networkList, fetchErr := f.NetworkListRetry(Context, nil)
 	if fetchErr != nil {
-		return fmt.Errorf("%w: unable to fetch network list", fetchErr.Err)
+		fmt.Errorf("%w: unable to fetch network list", fetchErr.Err)
+		return 
 	}
 
 	if len(networkList.NetworkIdentifiers) == 0 {
-		return errors.New("no networks available")
+		errors.New("no networks available")
+		return
 	}
 }
